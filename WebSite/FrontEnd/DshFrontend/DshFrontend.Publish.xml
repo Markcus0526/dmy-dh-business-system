@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="D:\Chinese\2014\16_DingShengHui\Result\FrontEnd" deleteExistingFiles="True" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Profile1" publishMethod="FileSystem" replaceMatchingFiles="False" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
+    <file relUrl="Content/themes/base/images/ui-bg_glass_75_dadada_1x400.png" publishTime="10/08/2014 16:23:16" />
+    <file relUrl="Scripts/jquery.unobtrusive-ajax.js" publishTime="10/08/2014 16:23:11" />
+    <file relUrl="Scripts/MicrosoftAjax.js" publishTime="10/08/2014 16:23:11" />
+    <file relUrl="Scripts/jquery-1.4.4-vsdoc.js" publishTime="10/08/2014 16:23:11" />
+    <file relUrl="bin/DshFrontend.dll" publishTime="11/30/2014 21:54:20" />
+    <file relUrl="Views/Finance/BuyCard1.aspx" publishTime="10/23/2014 18:12:36" />
+    <file relUrl="Views/Finance/BuyCard.aspx" publishTime="10/23/2014 18:12:36" />
+    <file relUrl="Content/themes/base/jquery-ui.css" publishTime="10/08/2014 16:23:16" />
+    <file relUrl="Content/themes/base/images/ui-bg_highlight-soft_75_cccccc_1x100.png" publishTime="10/08/2014 16:23:16" />
+    <file relUrl="Content/themes/base/images/ui-bg_glass_55_fbf9ee_1x400.png" publishTime="10/08/2014 16:23:16" />
+    <file relUrl="Scripts/MicrosoftMvcValidation.js" publishTime="10/08/2014 16:23:11" />
+    <file relUrl="Views/Goods/Paying.aspx" publishTime="10/17/2014 10:30:14" />
+    <file relUrl="Scripts/MicrosoftMvcValidation.debug.js" publishTime="10/08/2014 16:23:11" />
+    <file relUrl="Content/themes/base/images/ui-bg_flat_0_aaaaaa_40x100.png" publishTime="10/08/2014 16:23:16" />
+    <file relUrl="Views/Account/LogOn.aspx" publishTime="11/20/2014 14:43:14" />
+    <file relUrl="Scripts/jquery.validate.min.js" publishTime="10/08/2014 16:23:11" />
+    <file relUrl="Scripts/jquery-1.4.4.js" publishTime="10/08/2014 16:23:11" />
+    <file relUrl="Views/Goods/BuyGoods.aspx" publishTime="11/19/2014 10:24:10" />
+    <file relUrl="Views/Home/Main.aspx" publishTime="10/22/2014 10:20:49" />
+    <file relUrl="Content/themes/base/images/ui-icons_222222_256x240.png" publishTime="10/08/2014 16:23:16" />
+    <file relUrl="Scripts/jquery.validate.js" publishTime="10/08/2014 16:23:11" />
+    <file relUrl="Scripts/jquery-1.4.4.min.js" publishTime="10/08/2014 16:23:11" />
+    <file relUrl="Scripts/jquery.unobtrusive-ajax.min.js" publishTime="10/08/2014 16:23:11" />
+    <file relUrl="Content/themes/base/images/ui-icons_454545_256x240.png" publishTime="10/08/2014 16:23:16" />
+    <file relUrl="Scripts/jquery.validate-vsdoc.js" publishTime="10/08/2014 16:23:11" />
+    <file relUrl="Global.asax" publishTime="10/08/2014 16:23:18" />
+    <file relUrl="Content/themes/base/images/ui-bg_glass_65_ffffff_1x400.png" publishTime="10/08/2014 16:23:16" />
+    <file relUrl="Views/Account/ChangePassword.aspx" publishTime="10/22/2014 14:53:18" />
+    <file relUrl="Scripts/MicrosoftAjax.debug.js" publishTime="10/08/2014 16:23:11" />
+    <file relUrl="Scripts/jquery.validate.unobtrusive.js" publishTime="10/08/2014 16:23:11" />
+    <file relUrl="Views/Shared/CropModal.ascx" publishTime="10/21/2014 14:17:36" />
+    <file relUrl="Views/Goods/Goods.aspx" publishTime="11/15/2014 15:32:34" />
+    <file relUrl="Scripts/MicrosoftMvcAjax.debug.js" publishTime="10/08/2014 16:23:11" />
+    <file relUrl="Views/User/Profile.aspx" publishTime="11/15/2014 15:32:34" />
+    <file relUrl="Content/themes/base/images/ui-icons_cd0a0a_256x240.png" publishTime="10/08/2014 16:23:16" />
+    <file relUrl="Content/themes/base/images/ui-bg_glass_75_e6e6e6_1x400.png" publishTime="10/08/2014 16:23:16" />
+    <file relUrl="Views/Finance/Index.aspx" publishTime="10/31/2014 10:53:24" />
+    <file relUrl="bin/DshFrontend.pdb" publishTime="11/30/2014 21:54:20" />
+    <file relUrl="Views/Shared/LeftNav.ascx" publishTime="10/22/2014 14:52:58" />
+    <file relUrl="Scripts/jquery-ui.min.js" publishTime="10/08/2014 16:23:11" />
+    <file relUrl="Views/Shared/Error.aspx" publishTime="10/08/2014 16:23:18" />
+    <file relUrl="Web.config" publishTime="11/30/2014 21:54:45" />
+    <file relUrl="Content/themes/base/images/ui-bg_glass_95_fef1ec_1x400.png" publishTime="10/08/2014 16:23:16" />
+    <file relUrl="Content/themes/base/images/ui-icons_888888_256x240.png" publishTime="10/08/2014 16:23:16" />
+    <file relUrl="Content/Site.css" publishTime="10/08/2014 16:23:17" />
+    <file relUrl="Views/Account/Register.aspx" publishTime="11/10/2014 13:52:47" />
+    <file relUrl="Content/themes/base/images/ui-icons_2e83ff_256x240.png" publishTime="10/08/2014 16:23:16" />
+    <file relUrl="Views/User/Sale.aspx" publishTime="11/26/2014 21:52:31" />
+    <file relUrl="Scripts/MicrosoftMvcAjax.js" publishTime="10/08/2014 16:23:11" />
+    <file relUrl="Scripts/jquery-ui.js" publishTime="10/08/2014 16:23:11" />
+    <file relUrl="Views/Finance/CardType.aspx" publishTime="10/23/2014 18:12:36" />
+    <file relUrl="Scripts/jquery.validate.unobtrusive.min.js" publishTime="10/08/2014 16:23:11" />
+    <file relUrl="Content/themes/base/images/ui-bg_flat_75_ffffff_40x100.png" publishTime="10/08/2014 16:23:16" />
+    <file relUrl="Views/Web.config" publishTime="10/08/2014 16:23:18" />
+    <file relUrl="Views/Goods/ShowGoods.aspx" publishTime="11/15/2014 15:32:34" />
+    <file relUrl="Views/Goods/Validation.aspx" publishTime="10/11/2014 18:27:21" />
+  </publishProfile>
+</publishData>

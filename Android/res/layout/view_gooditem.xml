@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content" android:id="@+id/parent_layout" android:background="@color/grayrare">
+
+    <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="240px">
+        <view android:layout_width="200px"
+              android:layout_height="200px"
+              class="com.damytech.utils.SmartImageView.SmartImageView" android:id="@+id/viewPhoto"
+              android:layout_centerVertical="true" android:layout_alignParentLeft="true"
+              android:layout_marginRight="20px" android:layout_marginTop="20px" android:layout_marginLeft="20px"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="50px"
+                android:id="@+id/lblTitle" android:layout_alignTop="@+id/viewPhoto"
+                android:layout_toRightOf="@+id/viewPhoto" android:layout_marginLeft="20px"
+                android:layout_marginRight="30px" android:layout_alignParentRight="true" android:gravity="center_vertical|left"
+                android:textColor="@color/black" android:textSize="40px" android:singleLine="true"
+                android:ellipsize="end"/>
+        <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="80px"
+                android:id="@+id/lblData" android:layout_below="@+id/lblTitle"
+                android:layout_alignLeft="@+id/lblTitle" android:layout_alignRight="@+id/lblTitle"
+                android:layout_marginLeft="20px" android:layout_marginTop="10px" android:maxLines="2"
+                android:lines="2" android:ellipsize="end" android:textColor="@color/gray" android:textSize="35px"/>
+        <TextView
+                android:layout_width="250px"
+                android:layout_height="50px"
+                android:id="@+id/lblPrice" android:layout_alignBottom="@+id/viewPhoto"
+                android:layout_alignLeft="@+id/lblTitle" android:textSize="35px" android:textColor="@color/black"
+                android:gravity="bottom|left" android:ellipsize="end" android:singleLine="true"
+                />
+        <TextView
+                android:layout_width="150px"
+                android:layout_height="wrap_content"
+                android:id="@+id/lblSelledCount" android:layout_alignBottom="@+id/lblPrice"
+                android:layout_alignRight="@+id/lblData" android:layout_alignTop="@+id/lblPrice"
+                android:gravity="bottom|right" android:textColor="@color/orange" android:textSize="28px"
+                android:singleLine="true" android:ellipsize="end"/>
+    </RelativeLayout>
+</RelativeLayout>
+

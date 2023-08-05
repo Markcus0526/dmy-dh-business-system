@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" android:id="@+id/parent_layout" android:background="@color/grayrare">
+
+    <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="100px" android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true" android:background="@color/bluelight"
+            android:id="@+id/relativeLayout">
+        <ImageView
+                android:layout_width="50px"
+                android:layout_height="80px"
+                android:id="@+id/imgBack" android:layout_centerVertical="true" android:layout_alignParentLeft="true"
+                android:layout_marginLeft="30px" android:scaleType="fitCenter" android:src="@drawable/leftarrowicon"/>
+        <TextView
+                android:layout_width="400px"
+                android:layout_height="fill_parent"
+                android:text="@string/chanpinxiangqing"
+                android:id="@+id/lblTitle" android:layout_centerVertical="true" android:layout_centerHorizontal="true"
+                android:gravity="center" android:textColor="@color/white" android:textSize="50px"/>
+    </RelativeLayout>
+    <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="360px" android:id="@+id/rlPost" android:layout_marginLeft="20px"
+            android:layout_marginTop="20px" android:layout_marginRight="20px"
+            android:layout_below="@+id/relativeLayout">
+        <view android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              class="com.damytech.utils.HorizontalPager" android:id="@+id/viewPhotos"
+                />
+    </RelativeLayout>
+    <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" android:layout_below="@+id/rlPost"
+            android:layout_alignParentLeft="true" android:background="@color/grayrare">
+        <ScrollView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:id="@+id/scrollView" android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true">
+            <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+                <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="100px"
+                        android:background="@color/white" android:id="@+id/rlPrice" android:layout_marginLeft="20px"
+                        android:layout_marginTop="20px" android:layout_marginRight="20px">
+                    <TextView
+                            android:layout_width="250px"
+                            android:layout_height="fill_parent"
+                            android:id="@+id/lblPrice" android:layout_centerVertical="true"
+                            android:layout_alignParentLeft="true" android:gravity="center" android:paddingLeft="10px"
+                            android:paddingRight="10px" android:textColor="@color/bluelight" android:textSize="35px"
+                            android:textStyle="bold" android:singleLine="true"/>
+                    <TextView
+                            android:layout_width="135px"
+                            android:layout_height="fill_parent"
+                            android:id="@+id/lblDiscountPrice" android:layout_centerVertical="true"
+                            android:layout_toRightOf="@+id/lblPrice" android:gravity="center"
+                            android:textColor="@color/gray" android:textSize="24px" android:singleLine="true"/>
+                    <Button
+                            android:layout_width="200px"
+                            android:layout_height="80px"
+                            android:text="@string/lijiqianggou"
+                            android:id="@+id/btnBuy" android:layout_centerVertical="true"
+                            android:layout_alignParentRight="true" android:background="@drawable/roundorangeorange"
+                            android:textColor="@color/white" android:textSize="35px" android:layout_marginRight="20px"/>
+                </RelativeLayout>
+                <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="70px"
+                        android:id="@+id/lblName" android:layout_below="@+id/rlPrice"
+                        android:layout_alignLeft="@+id/rlPrice" android:layout_alignRight="@+id/rlPrice"
+                        android:gravity="center_vertical|left" android:textColor="@color/gray" android:textSize="45px"
+                        android:textStyle="bold"/>
+                <view android:layout_width="fill_parent"
+                      android:layout_height="500px"
+                      class="com.damytech.utils.NoZoomControllWebView" android:id="@+id/webDetail"
+                      android:layout_below="@+id/lblName" android:layout_alignLeft="@+id/lblName"
+                      android:layout_marginTop="10px" android:background="@android:color/transparent"
+                      android:layout_alignRight="@+id/lblName" />
+                <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="60px"
+                        android:text="@string/shangjidizhi"
+                        android:id="@+id/lblAddressTitle" android:layout_marginTop="20px"
+                        android:layout_below="@+id/webDetail" android:layout_alignLeft="@+id/webDetail"
+                        android:layout_alignRight="@+id/webDetail" android:gravity="center_vertical|left"
+                        android:textColor="@color/gray" android:textSize="35px" android:textStyle="bold"/>
+                <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="2px" android:layout_below="@+id/lblAddressTitle"
+                        android:layout_alignLeft="@+id/lblAddressTitle"
+                        android:layout_alignRight="@+id/lblAddressTitle" android:background="@color/bluelight"
+                        android:id="@+id/rlSeparate1" android:layout_marginTop="5px">
+                </RelativeLayout>
+                <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/lblAddress" android:layout_marginTop="5px"
+                        android:layout_below="@+id/rlSeparate1" android:layout_alignLeft="@+id/rlSeparate1"
+                        android:layout_alignRight="@+id/rlSeparate1" android:gravity="center_vertical|left"
+                        android:textColor="@color/gray" android:textSize="35px"/>
+                <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="60px"
+                        android:text="@string/shangjidianhua"
+                        android:id="@+id/lblPhoneTitle" android:layout_marginTop="20px"
+                        android:layout_below="@+id/lblAddress" android:layout_alignLeft="@+id/lblAddress"
+                        android:layout_alignRight="@+id/lblAddress" android:gravity="center_vertical|left"
+                        android:textColor="@color/gray" android:textSize="35px" android:textStyle="bold"/>
+                <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="2px" android:layout_below="@+id/lblPhoneTitle"
+                        android:layout_alignLeft="@+id/lblPhoneTitle"
+                        android:layout_alignRight="@+id/lblPhoneTitle" android:background="@color/bluelight"
+                        android:id="@+id/rlSeparate2" android:layout_marginTop="5px">
+                </RelativeLayout>
+                <TextView
+                        android:layout_width="300px"
+                        android:layout_height="60px"
+                        android:id="@+id/lblPhone" android:layout_marginTop="5px"
+                        android:layout_below="@+id/rlSeparate2" android:layout_alignLeft="@+id/rlSeparate2"
+                        android:gravity="center_vertical|left"
+                        android:textColor="@color/gray" android:textSize="35px"/>
+                <ImageView
+                        android:layout_width="40px"
+                        android:layout_height="60px"
+                        android:id="@+id/imgCall" android:layout_alignTop="@+id/lblPhone"
+                        android:layout_alignRight="@+id/rlSeparate2" android:scaleType="fitCenter"
+                        android:src="@drawable/callicon" android:layout_marginRight="50px"/>
+                <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="60px"
+                        android:text="@string/goumaixuzhi"
+                        android:id="@+id/lblAlarmTitle" android:layout_marginTop="20px"
+                        android:layout_below="@+id/lblPhone" android:layout_alignLeft="@+id/rlSeparate2"
+                        android:layout_alignRight="@+id/rlSeparate2" android:gravity="center_vertical|left"
+                        android:textColor="@color/gray" android:textSize="35px" android:textStyle="bold"/>
+                <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="2px" android:layout_below="@+id/lblAlarmTitle"
+                        android:layout_alignLeft="@+id/lblAlarmTitle"
+                        android:layout_alignRight="@+id/lblAlarmTitle" android:background="@color/bluelight"
+                        android:id="@+id/rlSeparate3" android:layout_marginTop="5px">
+                </RelativeLayout>
+                <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/lblAlarm" android:layout_marginTop="5px"
+                        android:layout_below="@+id/rlSeparate3" android:layout_alignLeft="@+id/rlSeparate3"
+                        android:layout_alignRight="@+id/rlSeparate3" android:gravity="center_vertical|left"
+                        android:textColor="@color/gray" android:textSize="35px"/>
+                <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="30px" android:layout_below="@+id/lblAlarm">
+                </RelativeLayout>
+            </RelativeLayout>
+        </ScrollView>
+    </RelativeLayout>
+</RelativeLayout>
+

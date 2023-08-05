@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent" android:id="@+id/parent_layout" android:background="@color/grayrare">
+
+    <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="100px" android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true" android:background="@color/bluelight"
+            android:id="@+id/relativeLayout">
+        <ImageView
+                android:layout_width="50px"
+                android:layout_height="80px"
+                android:id="@+id/imgBack" android:layout_centerVertical="true" android:layout_alignParentLeft="true"
+                android:layout_marginLeft="30px" android:scaleType="fitCenter" android:src="@drawable/leftarrowicon"/>
+        <TextView
+                android:layout_width="400px"
+                android:layout_height="fill_parent"
+                android:text="@string/pingjia"
+                android:id="@+id/lblTitle" android:layout_centerVertical="true" android:layout_centerHorizontal="true"
+                android:gravity="center" android:textColor="@color/white" android:textSize="50px"/>
+    </RelativeLayout>
+    <RelativeLayout
+            android:layout_width="480px"
+            android:layout_height="120px" android:layout_below="@+id/relativeLayout"
+            android:layout_centerHorizontal="true" android:layout_marginTop="150px"
+            android:background="@drawable/roundgraywhite" android:id="@+id/relativeLayout2">
+        <view android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              class="com.damytech.utils.ImageRatingView" android:id="@+id/viewStar"/>
+    </RelativeLayout>
+    <Button
+            android:layout_width="500px"
+            android:layout_height="100px"
+            android:text="@string/pingjia"
+            android:id="@+id/btnEvalute" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true"
+            android:layout_marginBottom="80px" android:background="@drawable/roundblueblue"
+            android:textColor="@color/white" android:textSize="40px"/>
+    <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="@string/haoping"
+            android:id="@+id/lblEvalHigh" android:layout_alignBottom="@+id/relativeLayout2"
+            android:layout_toRightOf="@+id/relativeLayout2"
+            android:textColor="@color/black" android:layout_alignTop="@+id/relativeLayout2" android:gravity="center"
+            android:textSize="35px"/>
+    <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="@string/chaping"
+            android:id="@+id/lblEvalLow" android:layout_alignTop="@+id/relativeLayout2"
+            android:layout_toLeftOf="@+id/btnEvalute" android:layout_alignBottom="@+id/relativeLayout2"
+            android:textColor="@color/black" android:textSize="35px" android:gravity="center"/>
+</RelativeLayout>
+

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent" android:id="@+id/parent_layout" android:background="@color/grayrare">
+
+    <ImageView
+            android:layout_width="275px"
+            android:layout_height="275px"
+            android:id="@+id/imgMainIcon" android:layout_alignParentTop="true" android:layout_centerHorizontal="true"
+            android:layout_marginTop="180px" android:scaleType="fitCenter" android:src="@drawable/mainicon"/>
+    <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="100px" android:layout_below="@+id/imgMainIcon"
+            android:layout_alignParentLeft="true" android:layout_marginTop="90px" android:layout_marginLeft="60px"
+            android:layout_marginRight="60px" android:background="@drawable/roundgraywhite"
+            android:id="@+id/relativeLayout">
+        <ImageView
+                android:layout_width="60px"
+                android:layout_height="68px"
+                android:id="@+id/imgUserIcon" android:layout_centerVertical="true" android:layout_alignParentLeft="true"
+                android:layout_marginLeft="25px" android:scaleType="fitCenter" android:src="@drawable/usericon_gray"/>
+        <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:id="@+id/txtUserID" android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/imgUserIcon" android:layout_marginLeft="60px"
+                android:background="@android:color/transparent" android:gravity="center_vertical|left"
+                android:textColor="@color/graylight" android:textSize="35px"
+                android:hint="@string/qingshuruyonghuming" android:paddingRight="20px" android:singleLine="true"
+                android:ellipsize="end"/>
+    </RelativeLayout>
+    <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="100px" android:layout_below="@+id/relativeLayout"
+            android:layout_marginTop="50px"
+            android:background="@drawable/roundgraywhite"
+            android:layout_alignRight="@+id/relativeLayout" android:layout_alignLeft="@+id/relativeLayout"
+            android:id="@+id/relativeLayout2">
+
+        <ImageView
+                android:layout_width="60px"
+                android:layout_height="68px"
+                android:id="@+id/imgLockIcon" android:layout_centerVertical="true" android:layout_alignParentLeft="true"
+                android:layout_marginLeft="25px" android:scaleType="fitCenter" android:src="@drawable/lockicon"/>
+        <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:id="@+id/txtPassword" android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/imgLockIcon" android:layout_marginLeft="60px"
+                android:background="@android:color/transparent" android:gravity="center_vertical|left"
+                android:textColor="@color/graylight" android:textSize="35px"
+                android:hint="@string/qingshurumima" android:paddingRight="20px" android:singleLine="true"
+                android:ellipsize="end" android:password="true"/>
+
+    </RelativeLayout>
+    <ImageView
+            android:layout_width="56px"
+            android:layout_height="50px"
+            android:id="@+id/imgRemPass" android:layout_below="@+id/relativeLayout2"
+            android:layout_alignLeft="@+id/relativeLayout2" android:layout_marginTop="45px"
+            android:scaleType="fitCenter" android:src="@drawable/unchecked"/>
+    <TextView
+            android:layout_width="200px"
+            android:layout_height="60px"
+            android:text="@string/jizhumima"
+            android:id="@+id/lblRemPass"
+            android:layout_toRightOf="@+id/imgRemPass" android:layout_below="@+id/relativeLayout2"
+            android:layout_marginTop="40px" android:layout_marginLeft="10px" android:gravity="center_vertical|left"
+            android:textColor="@color/graylight" android:textSize="35px"/>
+    <TextView
+            android:layout_width="200px"
+            android:layout_height="wrap_content"
+            android:text="@string/wangjimima"
+            android:id="@+id/lblDisPass" android:layout_alignTop="@+id/lblRemPass"
+            android:layout_alignRight="@+id/relativeLayout2" android:layout_alignBottom="@+id/lblRemPass"
+            android:gravity="center_vertical|right" android:textColor="@color/graylight" android:textSize="35px"/>
+    <Button
+            android:layout_width="250px"
+            android:layout_height="100px"
+            android:text="@string/denglu"
+            android:id="@+id/btnLogin" android:layout_alignParentBottom="true" android:layout_alignLeft="@+id/imgRemPass"
+            android:layout_marginBottom="120px" android:background="@drawable/roundblueblue"
+            android:textColor="@color/white" android:textSize="35px"/>
+    <Button
+            android:layout_width="250px"
+            android:layout_height="wrap_content"
+            android:text="@string/zhuce"
+            android:id="@+id/btnRegister" android:layout_alignBottom="@+id/btnLogin"
+            android:layout_alignRight="@+id/lblDisPass" android:layout_alignTop="@+id/btnLogin"
+            android:textColor="@color/bluelight" android:textSize="35px" android:background="@drawable/roundbluewhite"/>
+</RelativeLayout>
+

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent" android:id="@+id/parent_layout" android:background="@color/grayrare">
+
+    <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="100px" android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true" android:background="@color/bluelight"
+            android:id="@+id/relativeLayout">
+        <TextView
+                android:layout_width="400px"
+                android:layout_height="fill_parent"
+                android:text="@string/dingshenghui"
+                android:id="@+id/lblTitle" android:layout_centerVertical="true" android:layout_centerHorizontal="true"
+                android:gravity="center" android:textColor="@color/white" android:textSize="50px"/>
+        <ImageView
+                android:layout_width="65px"
+                android:layout_height="69px"
+                android:id="@+id/imgUserInfo" android:layout_centerVertical="true"
+                android:layout_alignParentRight="true" android:layout_marginRight="20px" android:scaleType="fitCenter"
+                android:src="@drawable/usericon"/>
+    </RelativeLayout>
+    <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="290px" android:layout_below="@+id/relativeLayout"
+            android:layout_alignParentLeft="true" android:layout_marginLeft="30px" android:layout_marginRight="30px"
+            android:layout_marginTop="30px" android:id="@+id/rlGallery">
+        <view android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              class="com.damytech.utils.HorizontalPager" android:id="@+id/rlGoods" android:layout_centerVertical="true"
+              android:layout_centerHorizontal="true"/>
+    </RelativeLayout>
+    <RelativeLayout
+            android:layout_width="378px"
+            android:layout_height="385px" android:layout_below="@+id/rlGallery"
+            android:layout_alignLeft="@+id/rlGallery" android:layout_marginTop="30px"
+            android:background="@color/yellowlight"
+            android:id="@+id/rlNormalGood">
+        <ImageView
+                android:layout_width="135px"
+                android:layout_height="108px"
+                android:id="@+id/imgNormalGood" android:layout_alignParentTop="true" android:layout_centerHorizontal="true"
+                android:layout_marginTop="90px" android:scaleType="fitCenter" android:src="@drawable/normalgoodicon"/>
+        <TextView
+                android:layout_width="300px"
+                android:layout_height="80px"
+                android:text="@string/jingcaituangou"
+                android:id="@+id/lblNormalGood" android:layout_below="@+id/imgNormalGood"
+                android:layout_centerHorizontal="true" android:layout_marginTop="50px" android:gravity="center"
+                android:textColor="@color/white" android:textSize="40px"/>
+    </RelativeLayout>
+    <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" android:layout_alignTop="@+id/rlNormalGood"
+            android:layout_alignBottom="@+id/rlNormalGood" android:layout_alignRight="@+id/rlGallery"
+            android:layout_toRightOf="@+id/rlNormalGood" android:layout_marginLeft="30px"
+            android:background="@color/magenta" android:id="@+id/rlCar">
+        <ImageView
+                android:layout_width="120px"
+                android:layout_height="108px"
+                android:id="@+id/imgCar" android:layout_alignParentTop="true" android:layout_centerHorizontal="true"
+                android:layout_marginTop="90px" android:scaleType="fitCenter" android:src="@drawable/cargoodicon"/>
+        <TextView
+                android:layout_width="200px"
+                android:layout_height="80px"
+                android:text="@string/wangshangchecheng"
+                android:id="@+id/lblCar" android:layout_below="@+id/imgCar" android:layout_centerHorizontal="true"
+                android:layout_marginTop="50px" android:gravity="center" android:textColor="@color/white"
+                android:textSize="40px"/>
+    </RelativeLayout>
+    <RelativeLayout
+            android:layout_width="220px"
+            android:layout_height="177px" android:layout_below="@+id/rlNormalGood"
+            android:layout_alignLeft="@+id/rlNormalGood" android:layout_marginTop="30px"
+            android:background="@color/bluelight" android:id="@+id/rlFinance">
+        <ImageView
+                android:layout_width="85px"
+                android:layout_height="72px"
+                android:id="@+id/imgFinance" android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true" android:layout_marginTop="20px" android:scaleType="fitCenter"
+                android:src="@drawable/financeicon"/>
+        <TextView
+                android:layout_width="200px"
+                android:layout_height="80px"
+                android:text="@string/jinrongchaoshi"
+                android:id="@+id/lblFinance" android:layout_below="@+id/imgFinance"
+                android:layout_centerHorizontal="true" android:layout_marginTop="10px" android:gravity="center"
+                android:textColor="@color/white" android:textSize="40px"/>
+    </RelativeLayout>
+    <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_toRightOf="@+id/rlFinance" android:layout_alignRight="@+id/rlGallery"
+            android:layout_marginLeft="30px" android:layout_alignParentBottom="true" android:layout_marginBottom="30px"
+            android:background="@color/redlight" android:id="@+id/rlSpecGood"
+            android:layout_alignTop="@+id/rlFinance">
+        <ImageView
+                android:layout_width="120px"
+                android:layout_height="120px"
+                android:id="@+id/imgSpecGood" android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true" android:scaleType="fitCenter"
+                android:src="@drawable/specgoodicon" android:layout_marginTop="90px"/>
+        <TextView
+                android:layout_width="300px"
+                android:layout_height="80px"
+                android:text="@string/tehuishanghu"
+                android:id="@+id/lblSpecGood" android:layout_below="@+id/imgSpecGood"
+                android:layout_centerHorizontal="true" android:layout_marginTop="50px" android:gravity="center"
+                android:textColor="@color/white" android:textSize="40px"/>
+    </RelativeLayout>
+    <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="177px"
+            android:layout_below="@+id/rlFinance" android:layout_alignLeft="@+id/rlFinance"
+            android:layout_alignRight="@+id/rlFinance" android:layout_marginTop="30px"
+            android:background="@color/greeelight" android:id="@+id/rlUserService">
+
+        <ImageView
+                android:layout_width="70px"
+                android:layout_height="70px"
+                android:id="@+id/imgUserService" android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true" android:layout_marginTop="25px" android:scaleType="fitCenter"
+                android:src="@drawable/userserviceicon"/>
+        <TextView
+                android:layout_width="200px"
+                android:layout_height="80px"
+                android:text="@string/huiyuanfuwu"
+                android:id="@+id/lblUserService" android:layout_below="@+id/imgUserService"
+                android:layout_centerHorizontal="true" android:layout_marginTop="10px" android:gravity="center"
+                android:textColor="@color/white" android:textSize="40px"/>
+
+    </RelativeLayout>
+</RelativeLayout>
+

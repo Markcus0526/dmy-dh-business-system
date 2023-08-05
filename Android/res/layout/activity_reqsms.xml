@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent" android:id="@+id/parent_layout" android:background="@color/grayrare">
+
+    <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="100px" android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true" android:background="@color/bluelight"
+            android:id="@+id/relativeLayout">
+        <ImageView
+                android:layout_width="50px"
+                android:layout_height="80px"
+                android:id="@+id/imgBack" android:layout_centerVertical="true" android:layout_alignParentLeft="true"
+                android:layout_marginLeft="30px" android:scaleType="fitCenter" android:src="@drawable/leftarrowicon"/>
+        <TextView
+                android:layout_width="400px"
+                android:layout_height="fill_parent"
+                android:text="@string/wangjimima"
+                android:id="@+id/lblTitle" android:layout_centerVertical="true" android:layout_centerHorizontal="true"
+                android:gravity="center" android:textColor="@color/white" android:textSize="50px"/>
+    </RelativeLayout>
+    <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="60px"
+            android:text="@string/yanzhengmaduanxin"
+            android:id="@+id/lblHint" android:layout_below="@+id/relativeLayout" android:layout_centerHorizontal="true"
+            android:layout_marginTop="75px" android:layout_marginLeft="60px" android:layout_marginRight="60px"
+            android:gravity="center_vertical|left" android:textColor="@color/graylight" android:textSize="35px"/>
+    <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="100px" android:layout_below="@+id/lblHint"
+            android:layout_alignParentLeft="true" android:layout_marginTop="50px" android:layout_marginLeft="60px"
+            android:layout_marginRight="60px" android:background="@drawable/roundgraywhite"
+            android:id="@+id/relativeLayout2">
+        <Button
+                android:layout_width="250px"
+                android:layout_height="fill_parent"
+                android:text="@string/huoquyanzhengma"
+                android:id="@+id/btnVerifyKey" android:layout_alignParentTop="true" android:layout_alignParentLeft="true"
+                android:background="@drawable/roundleftblue_frame" android:textColor="@color/white"
+                android:textSize="35px"/>
+        <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:id="@+id/txtVerifyKey" android:layout_alignParentBottom="true"
+                android:layout_toRightOf="@+id/btnVerifyKey" android:layout_alignParentRight="true"
+                android:gravity="center_vertical|left" android:textColor="@color/graylight" android:textSize="35px"
+                android:paddingLeft="20px" android:paddingRight="20px" android:ellipsize="end"
+                android:singleLine="true" android:inputType="number" android:background="@android:color/transparent"/>
+    </RelativeLayout>
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="100px"
+            android:text="@string/xiayibu"
+            android:id="@+id/btnNext"
+            android:layout_marginTop="50px" android:layout_below="@+id/relativeLayout2"
+            android:layout_alignRight="@+id/relativeLayout2" android:layout_alignLeft="@+id/relativeLayout2"
+            android:background="@drawable/roundblueblue" android:textColor="@color/white" android:textSize="35px"/>
+</RelativeLayout>
+

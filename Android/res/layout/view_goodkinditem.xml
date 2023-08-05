@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content" android:id="@+id/parent_layout" android:background="@android:color/transparent">
+
+    <RelativeLayout
+            android:layout_width="160px"
+            android:layout_height="160px" android:background="@android:color/transparent">
+        <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" android:layout_margin="5px"
+                android:background="@drawable/roundgraywhite">
+            <view android:layout_width="90px"
+                  android:layout_height="90px"
+                  class="com.damytech.utils.SmartImageView.SmartImageView" android:id="@+id/viewIcon"
+                  android:layout_alignParentTop="true" android:layout_centerHorizontal="true"
+                  android:layout_marginTop="10px"/>
+            <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="50px"
+                    android:id="@+id/lblName" android:layout_alignParentBottom="true"
+                    android:ellipsize="end" android:gravity="center" android:textColor="@color/gray"
+                    android:textSize="28px" android:textStyle="bold" android:paddingLeft="5px"
+                    android:paddingRight="5px" android:singleLine="true"/>
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>
+

@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1CFF2C2C-51B9-4CB2-91E4-EB2B238541F0}</ProjectGuid>
+    <ProjectTypeGuids>{E53F8FEA-EAE0-44A6-8774-FFD645390401};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DshBackend</RootNamespace>
+    <AssemblyName>DshBackend</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.WebPages" />
+    <Reference Include="System.Web.Helpers" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\CardController.cs" />
+    <Compile Include="Controllers\CatalogController.cs" />
+    <Compile Include="Controllers\DeviceController.cs" />
+    <Compile Include="Controllers\MoneyController.cs" />
+    <Compile Include="Controllers\RegionController.cs" />
+    <Compile Include="Controllers\ShopController.cs" />
+    <Compile Include="Controllers\UploadController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountModel.cs" />
+    <Compile Include="Models\AdminModel.cs" />
+    <Compile Include="Models\CatalogModel.cs" />
+    <Compile Include="Models\CommonModel.cs" />
+    <Compile Include="Models\CardModel.cs" />
+    <Compile Include="Models\DeviceModel.cs" />
+    <Compile Include="Models\EvalModel.cs" />
+    <Compile Include="Models\KindModel.cs" />
+    <Compile Include="Models\OtherpayModel.cs" />
+    <Compile Include="Models\RegionModel.cs" />
+    <Compile Include="Models\SaleModel.cs" />
+    <Compile Include="Models\ShopModel.cs" />
+    <Compile Include="Models\UserModel.cs" />
+    <Compile Include="Models\CustomRoleProvider.cs" />
+    <Compile Include="Models\DshDBModel.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DshDBModel.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Library\AjaxOnlyAttribute.cs" />
+    <Compile Include="Models\Library\ApkLicenseService.cs" />
+    <Compile Include="Models\Library\Captcha.cs" />
+    <Compile Include="Models\Library\CaptchaResult.cs" />
+    <Compile Include="Models\Library\ImageHelper.cs" />
+    <Compile Include="Models\Library\JqDataTableInfo.cs" />
+    <Compile Include="Models\Library\JqGridFilters.cs" />
+    <Compile Include="Models\Library\JQueryDataTableParamModel.cs" />
+    <Compile Include="Models\Library\SessionExpireFilterAttribute.cs" />
+    <Compile Include="Models\Library\SHA1Util.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Views\Account\LogOn.aspx" />
+    <Content Include="Views\Admin\AddAdmin.aspx" />
+    <Content Include="Views\Admin\AddKind.aspx" />
+    <Content Include="Views\Admin\AddRole.aspx" />
+    <Content Include="Views\Admin\AddShop.aspx" />
+    <Content Include="Views\Admin\AdminList.aspx" />
+    <Content Include="Views\Admin\ChangePwd.aspx" />
+    <Content Include="Views\Admin\KindList.aspx" />
+    <Content Include="Views\Admin\RoleList.aspx" />
+    <Content Include="Views\Admin\ShopList.aspx" />
+    <Content Include="Views\Card\AddCard.aspx" />
+    <Content Include="Views\Card\BankCard.aspx" />
+    <Content Include="Views\Card\EditOrgLendCardInfo.aspx" />
+    <Content Include="Views\Card\LendCard.aspx" />
+    <Content Include="Views\Card\InsuranceCard.aspx" />
+    <Content Include="Views\Card\FinanceCard.aspx" />
+    <Content Include="Views\Card\CreditCard.aspx" />
+    <Content Include="Views\Card\EditCardInfo.aspx" />
+    <Content Include="Views\Catalog\AddExtraCatalog.aspx" />
+    <Content Include="Views\Catalog\BackList.aspx" />
+    <Content Include="Views\Catalog\ExtraCatalogList.aspx" />
+    <Content Include="Views\Catalog\GeneralCatalogList.aspx" />
+    <Content Include="Views\Catalog\OderDetail.aspx" />
+    <Content Include="Views\Catalog\TicketList.aspx" />
+    <Content Include="Views\Device\AddDevice.aspx" />
+    <Content Include="Views\Device\DeviceList.aspx" />
+    <Content Include="Views\Money\AddAdminpay.aspx" />
+    <Content Include="Views\Money\AdminpayList.aspx" />
+    <Content Include="Views\Money\EditUser.aspx" />
+    <Content Include="Views\Money\SaleList.aspx" />
+    <Content Include="Views\Money\ShowSale.aspx" />
+    <Content Include="Views\Money\ShowShopTotal.aspx" />
+    <Content Include="Views\Money\UserList.aspx" />
+    <Content Include="Views\Shared\CropModal.ascx" />
+    <Content Include="Views\Shared\TopNav.ascx" />
+    <Content Include="Views\Shop\AddShoppay.aspx" />
+    <Content Include="Views\Shop\ChangePwd.aspx" />
+    <Content Include="Views\Shop\SaleList.aspx" />
+    <Content Include="Views\Shop\ShopList.aspx" />
+    <Content Include="Views\Shop\ShoppayList.aspx" />
+    <Content Include="Views\Shop\TicketList.aspx" />
+    <Content Include="Views\User\EditUser.aspx" />
+    <Content Include="Views\User\UserList.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Scripts\jquery-1.4.4.js" />
+    <Content Include="Scripts\jquery-1.4.4.min.js" />
+    <Content Include="Scripts\jquery-1.4.4-vsdoc.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui.js" />
+    <Content Include="Scripts\jquery-ui.min.js" />
+    <Content Include="Scripts\MicrosoftAjax.js" />
+    <Content Include="Scripts\MicrosoftAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\Shared\Error.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Models\DshDBModel.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DshDBModel.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Models\DshDBModel.dbml.layout">
+      <DependentUpon>DshDBModel.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Content\themes\base\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>9526</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

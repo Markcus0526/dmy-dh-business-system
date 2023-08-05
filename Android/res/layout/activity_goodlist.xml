@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent" android:id="@+id/parent_layout" android:background="@color/white">
+
+    <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="100px" android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true" android:background="@color/bluelight"
+            android:id="@+id/relativeLayout">
+        <ImageView
+                android:layout_width="50px"
+                android:layout_height="80px"
+                android:id="@+id/imgBack" android:layout_centerVertical="true" android:layout_alignParentLeft="true"
+                android:layout_marginLeft="30px" android:scaleType="fitCenter" android:src="@drawable/leftarrowicon"/>
+        <TextView
+                android:layout_width="300px"
+                android:layout_height="fill_parent"
+                android:id="@+id/lblTitle" android:layout_centerVertical="true" android:layout_centerHorizontal="true"
+                android:gravity="center" android:textColor="@color/white" android:textSize="50px"
+                />
+        <ImageView
+                android:layout_width="65px"
+                android:layout_height="69px"
+                android:id="@+id/imgUserInfo" android:layout_centerVertical="true"
+                android:layout_alignParentRight="true" android:layout_marginRight="20px" android:scaleType="fitCenter"
+                android:src="@drawable/usericon"/>
+        <ImageView
+                android:layout_width="70px"
+                android:layout_height="70px"
+                android:id="@+id/imgSearch" android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/imgUserInfo" android:layout_marginRight="35px"
+                android:scaleType="fitCenter" android:src="@drawable/searchicon"/>
+    </RelativeLayout>
+    <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="180px" android:layout_below="@+id/relativeLayout"
+            android:background="@color/grayrare" android:id="@+id/rlMenu">
+        <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="160px"
+                android:layout_alignParentLeft="true" android:layout_marginLeft="30px" android:layout_marginRight="30px"
+                android:id="@+id/rlGallery" android:layout_centerVertical="true">
+            <HorizontalScrollView
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:id="@+id/horizontalScrollView" android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true">
+                <LinearLayout
+                        android:id="@+id/llKinds"
+                        android:orientation="horizontal"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent">
+                </LinearLayout>
+            </HorizontalScrollView>
+        </RelativeLayout>
+    </RelativeLayout>
+    <view android:layout_width="fill_parent"
+          android:layout_height="fill_parent"
+          class="com.damytech.utils.PullRefreshListView.PullToRefreshListView" android:id="@+id/listGoods"
+          android:layout_below="@+id/rlMenu" android:layout_centerHorizontal="true"
+          android:layout_marginTop="30px" android:layout_marginRight="5px" android:layout_marginBottom="5px"
+          android:layout_marginLeft="5px"/>
+</RelativeLayout>
+

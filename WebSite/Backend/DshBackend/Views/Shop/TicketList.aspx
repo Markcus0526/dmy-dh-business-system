@@ -1,0 +1,409 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<dynamic>" %>
+<%@ Import Namespace="DshBackend.Models" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+<div class="page-header">
+	<h1>
+		我的订单查看
+		<%--<small>
+			<i class="ace-icon fa fa-angle-double-right"></i>
+			通过管理员设置，您可以进行编辑管理员资料、权限、密码以及删除管理员等操作。
+		</small>--%>
+	</h1>
+</div>
+<div class="row">
+	<div class="col-xs-12">
+        <%--<p class="alert alert-info">
+	        <i class="ace-icon fa fa-exclamation-triangle"></i>
+            修改管理员权限后 需管理员重新登录后生效
+        </p>--%>
+		<div>
+            <p>                
+                <a class="btn btn-white btn-info btn-bold" href="#" onclick="export_excel();">
+	                <i class="ace-icon fa fa-plus bigger-120 blue"></i>导出EXCEL
+                </a>
+                <a class="btn btn-white btn-warning btn-bold btnbatch" style="display:none;" id="btnbatchdel" onclick="processDel();">
+                    <i class="ace-icon fa fa-trash-o bigger-120 orange"></i>批量删除
+                </a>
+                <a class="btn btn-white btn-warning btn-bold btnbatch" style="display:none;" id="A1" onclick="processIdentify();">
+                    <i class="ace-icon fa fa-trash-o bigger-120 orange"></i>批量验证
+                </a>
+            </p>
+		</div>
+
+        <div class="widget-box" style="height:65px;padding-top:10px;">
+
+			<table style="width:100%;">
+				<tr>                    
+                    <td width="100px" align="right">
+                        <label for="form-field-select-3">验证状态:&nbsp;&nbsp;&nbsp;</label>
+                    </td>
+                    <td width="260px">
+		                <select class="select2" id="identify" data-placeholder="Click to Choose...">
+                                <option value="3">全部</option>
+                                <option value="0">待认证</option>
+                                <option value="1">通过</option>
+                                <option value="2">未通过</option>
+				        </select>
+                    </td>
+					<td width="80px">
+						<span class="btn btn-sm btn-info" onclick="refreshTable();" ><i class="fa fa-search"></i> 搜索</span>
+                    </td>   
+                    <td>
+                            <label for="form-field-select-3">&nbsp;&nbsp;&nbsp;</label>
+                    </td> 
+			    </tr>
+		    </table>
+        </div>
+
+		<div>
+			<table id="tbldata" class="table table-striped table-bordered table-hover">
+				<thead>
+					<tr>
+						<th class="center" style="width:60px;">
+							<label class="position-relative">
+								<input type="checkbox" class="ace" />
+								<span class="lbl"></span>
+							</label>
+						</th>
+						<th>商品名称</th>
+						<th>购买日期</th>
+						<th>客户名称</th>
+						<th>联系方式</th>
+						<th>验证码</th>
+						<th>验证状态</th>
+						<th style="min-width:80px;width:150px;">操作</th>
+					</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+
+    <form action="<% =ViewData["rootUri"] %>Shop/ExportTicketList" method="post" id="submit_form_export" target="_blank">
+        <input type="hidden" name="identify" value="0" />
+    </form>
+
+</asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="PageStyle" runat="server">
+	<link rel="stylesheet" type="text/css" href="<%= ViewData["rootUri"] %>Content/plugins/bootstrap-toastr/toastr.min.css" />
+	<link rel="stylesheet" href="<%= ViewData["rootUri"] %>Content/css/select2.css" />
+</asp:Content>
+
+<asp:Content ID="Content3" ContentPlaceHolderID="PageScripts" runat="server">
+	<script src="<%= ViewData["rootUri"] %>Content/js/jquery.dataTables.min.js"></script>
+	<script src="<%= ViewData["rootUri"] %>Content/js/jquery.dataTables.bootstrap.js"></script>
+	<script src="<%= ViewData["rootUri"] %>Content/js/bootbox.min.js"></script>
+	<script src="<%= ViewData["rootUri"] %>Content/plugins/bootstrap-toastr/toastr.js"></script>  
+	<script src="<%= ViewData["rootUri"] %>Content/js/select2.min.js"></script>
+	<script src="<%= ViewData["rootUri"] %>Content/js/jquery.validate.min.js"></script>
+	<script src="<%= ViewData["rootUri"] %>Content/js/validate.messages_zh.js"></script>
+		<script type="text/javascript">
+        
+		    var selected_id = "";
+		    var oTable;
+		    jQuery(function ($) {
+		        oTable =
+				$('#tbldata')
+				.dataTable({
+				    "bServerSide": true,
+				    "bProcessing": true,
+				    "sAjaxSource": rootUri + "Shop/RetrieveTicketList",
+				    "oLanguage": {
+				        "sUrl": rootUri + "Content/i18n/dataTables.chinese.txt"
+				    },
+				    //bAutoWidth: false,
+				    "aoColumns": [
+					  { "bSortable": false },
+					  null,
+					  { "bSortable": false },
+					  { "bSortable": false },
+					  { "bSortable": false },
+					  { "bSortable": false },
+					  { "bSortable": false },
+					  { "bSortable": false }
+					],
+				    "aLengthMenu": [
+                        [10, 20, 50, -1],
+                        [10, 20, 50, "All"] // change per page values here
+                    ],
+				    "iDisplayLength": 10,
+				    "aoColumnDefs": [
+				        {
+				            aTargets: [0],    // Column number which needs to be modified
+				            fnRender: function (o, v) {   // o, v contains the object and value for the column
+				                return '<label class="position-relative">' +
+								    '<input type="checkbox" value="' + o.aData[0] + '" name="selcheckbox" class="ace" onclick="showBatchBtn()" />' +
+								    '<span class="lbl"></span>' +
+							        '</label>';
+				            },
+				            sClass: 'center'
+				        },
+				        {
+				            aTargets: [6],    // Column number which needs to be modified
+				            fnRender: function (o, v) {   // o, v contains the object and value for the column
+				                var rst = '';
+				                switch (parseInt(o.aData[6], 10)) {
+				                    case 0:
+				                        rst = '<span class="label label-warning">待认证</span>';
+				                        break;
+				                    case 1:
+				                        rst = '<span class="label label-success">通过</span>';
+				                        break;
+				                    case 2:
+				                        rst = '<span class="label label-danger">未通过</span>';
+				                        break;
+				                    default:
+				                        rst = '<span class="label label-warning">待认证</span>';
+				                        break;
+				                }
+				                return rst;
+				            },
+				            sClass: 'center'
+				        },
+				        {
+				            aTargets: [7],    // Column number which needs to be modified
+				            fnRender: function (o, v) {   // o, v contains the object and value for the column
+				                var rst = '<a class="btn btn-xs btn-info" onclick="processIdentify(' + o.aData[7] + ')">' +
+                                    '<i class="ace-icon fa fa-key bigger-120"></i>' +
+                                    '</a>&nbsp;&nbsp;';
+				                rst += '<a class="btn btn-xs btn-danger" onclick="processDel(' + o.aData[7] + ')">' +
+                                    '<i class="ace-icon fa fa-trash-o bigger-120"></i>' +
+                                    '</a>';
+				                return rst;
+				            },
+				            sClass: 'center'
+				        }
+                    ],
+				    "fnDrawCallback": function (oSettings) {
+				        showBatchBtn();
+				    }
+
+				});
+
+		        $(document).on('click', 'th input:checkbox', function () {
+		            var that = this;
+		            $(this).closest('table').find('tr > td:first-child input:checkbox')
+					.each(function () {
+					    this.checked = that.checked;
+					    $(this).closest('tr').toggleClass('selected');
+					});
+
+		            showBatchBtn();
+		        });
+
+		        $('[data-rel="tooltip"]').tooltip({ placement: tooltip_placement });
+		        function tooltip_placement(context, source) {
+		            var $source = $(source);
+		            var $parent = $source.closest('table')
+		            var off1 = $parent.offset();
+		            var w1 = $parent.width();
+
+		            var off2 = $source.offset();
+		            //var w2 = $source.width();
+
+		            if (parseInt(off2.left) < parseInt(off1.left) + parseInt(w1 / 2)) return 'right';
+		            return 'left';
+		        }
+
+		        $(".select2").css('width', '250px').select2({ allowClear: true })
+		    });
+
+		    function showBatchBtn() {
+		        selected_id = "";
+
+		        $(':checkbox:checked').each(function () {
+		            if ($(this).attr('name') == 'selcheckbox')
+		                selected_id += $(this).attr('value') + ",";
+		        });
+
+		        if (selected_id != "") {
+		            $(".btnbatch").show();
+		            //$("#btnbatchdel").show();
+		        } else {
+		            $(".btnbatch").hide();
+		            //$("#btnbatchdel").hide();
+		        }
+		    }
+
+		    function refreshTable() {
+		        var identify = $("#identify").val();
+
+		        oSettings = oTable.fnSettings();
+		        oSettings.sAjaxSource = rootUri + "Shop/RetrieveTicketList?identify=" + identify;
+
+		        oTable.dataTable().fnDraw();
+		    }
+		    function redirectToListPage(status) {
+		        if (status.indexOf("error") != -1) {
+		        } else {
+		            refreshTable();
+		        }
+		    }
+
+		    function processDel(sel_id) {
+		        var selected_id = "";
+
+		        if (sel_id != null && sel_id.length != "") {
+		            selected_id = sel_id;
+		        } else {
+		            $(':checkbox:checked').each(function () {
+		                if ($(this).attr('name') == 'selcheckbox')
+		                    selected_id += $(this).attr('value') + ",";
+		            });
+		        }
+
+		        if (selected_id != "") {
+		            bootbox.dialog({
+		                message: "您确定要处理吗？",
+		                buttons: {
+		                    danger: {
+		                        label: "取消",
+		                        className: "btn-danger",
+		                        callback: function () {
+		                            return true;
+		                        }
+		                    },
+		                    main: {
+		                        label: "确定",
+		                        className: "btn-primary",
+		                        callback: function () {
+		                            $.ajax({
+		                                url: rootUri + "Shop/DeleteTicket",
+		                                data: {
+		                                    "delids": selected_id
+		                                },
+		                                type: "post",
+		                                success: function (message) {
+		                                    if (message == true) {
+		                                        toastr.options = {
+		                                            "closeButton": false,
+		                                            "debug": true,
+		                                            "positionClass": "toast-bottom-right",
+		                                            "onclick": null,
+		                                            "showDuration": "3",
+		                                            "hideDuration": "3",
+		                                            "timeOut": "1500",
+		                                            "extendedTimeOut": "1000",
+		                                            "showEasing": "swing",
+		                                            "hideEasing": "linear",
+		                                            "showMethod": "fadeIn",
+		                                            "hideMethod": "fadeOut"
+		                                        };
+		                                        toastr["success"]("批量删除成功！", "恭喜您");
+		                                    }
+		                                }
+		                            });
+		                        }
+		                    }
+		                }
+		            });
+		        }
+		        else {
+		            //
+		        }
+		        return false;
+		    }
+
+		    function processIdentify(sel_id) {
+		        var selected_id = "";
+
+		        if (sel_id != null && sel_id.length != "") {
+		            selected_id = sel_id;
+		        } else {
+		            $(':checkbox:checked').each(function () {
+		                if ($(this).attr('name') == 'selcheckbox')
+		                    selected_id += $(this).attr('value') + ",";
+		            });
+		        }
+
+		        if (selected_id != "") {
+		            bootbox.dialog({
+		                message: "您确定要验证吗？",
+		                buttons: {
+		                    danger: {
+		                        label: "验证不通过",
+		                        className: "btn-danger",
+		                        callback: function () {
+		                            $.ajax({
+		                                url: rootUri + "Shop/IdentifyTicket",
+		                                data: {
+		                                    "delids": selected_id,
+		                                    "identify": 2
+		                                },
+		                                type: "post",
+		                                success: function (message) {
+		                                    if (message == true) {
+		                                        toastr.options = {
+		                                            "closeButton": false,
+		                                            "debug": true,
+		                                            "positionClass": "toast-bottom-right",
+		                                            "onclick": null,
+		                                            "showDuration": "3",
+		                                            "hideDuration": "3",
+		                                            "timeOut": "1500",
+		                                            "extendedTimeOut": "1000",
+		                                            "showEasing": "swing",
+		                                            "hideEasing": "linear",
+		                                            "showMethod": "fadeIn",
+		                                            "hideMethod": "fadeOut"
+		                                        };
+		                                        toastr["success"]("批量删除成功！", "恭喜您");
+		                                    }
+		                                }
+		                            });
+		                        }
+		                    },
+		                    main: {
+		                        label: "验证通过",
+		                        className: "btn-primary",
+		                        callback: function () {
+		                            $.ajax({
+		                                url: rootUri + "Shop/IdentifyTicket",
+		                                data: {
+		                                    "delids": selected_id,
+                                            "identify": 1
+		                                },
+		                                type: "post",
+		                                success: function (message) {
+		                                    if (message == true) {
+		                                        toastr.options = {
+		                                            "closeButton": false,
+		                                            "debug": true,
+		                                            "positionClass": "toast-bottom-right",
+		                                            "onclick": null,
+		                                            "showDuration": "3",
+		                                            "hideDuration": "3",
+		                                            "timeOut": "1500",
+		                                            "extendedTimeOut": "1000",
+		                                            "showEasing": "swing",
+		                                            "hideEasing": "linear",
+		                                            "showMethod": "fadeIn",
+		                                            "hideMethod": "fadeOut"
+		                                        };
+		                                        toastr["success"]("批量删除成功！", "恭喜您");
+		                                    }
+		                                }
+		                            });
+		                        }
+		                    }
+		                }
+		            });
+		        }
+		        else {
+		            //
+		        }
+		        return false;
+		    }
+
+        </script>
+        <script type="text/javascript">
+            function export_excel() {
+                $("#submit_form_export input[name='identify']").val($("#identify").val());
+                $("#submit_form_export").submit();
+            }
+    </script>
+</asp:Content>

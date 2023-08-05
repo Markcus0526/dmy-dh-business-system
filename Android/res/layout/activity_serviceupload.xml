@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent" android:id="@+id/parent_layout" android:background="@color/grayrare">
+
+    <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="100px" android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true" android:background="@color/bluelight"
+            android:id="@+id/relativeLayout">
+        <ImageView
+                android:layout_width="50px"
+                android:layout_height="80px"
+                android:id="@+id/imgBack" android:layout_centerVertical="true" android:layout_alignParentLeft="true"
+                android:layout_marginLeft="30px" android:scaleType="fitCenter" android:src="@drawable/leftarrowicon"/>
+        <TextView
+                android:layout_width="400px"
+                android:layout_height="fill_parent"
+                android:id="@+id/lblTitle" android:layout_centerVertical="true" android:layout_centerHorizontal="true"
+                android:gravity="center" android:textColor="@color/white" android:textSize="50px"/>
+    </RelativeLayout>
+    <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" android:layout_below="@+id/relativeLayout"
+            android:layout_alignParentLeft="true" android:background="@color/grayrare">
+        <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="900px" android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true" android:layout_marginLeft="30px" android:layout_marginTop="30px"
+                android:layout_marginRight="30px" android:background="@drawable/roundgraywhite">
+            <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="100px" android:id="@+id/relativeLayout2">
+                <TextView
+                        android:layout_width="200px"
+                        android:layout_height="fill_parent"
+                        android:text="@string/chikarenxingming"
+                        android:id="@+id/lblNameTitle" android:layout_centerVertical="true"
+                        android:layout_alignParentLeft="true" android:gravity="center_vertical|right"
+                        android:textColor="@color/gray" android:textSize="35px" android:layout_marginLeft="30px"/>
+                <EditText
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:id="@+id/txtName" android:layout_alignParentBottom="true"
+                        android:layout_toRightOf="@+id/lblNameTitle" android:layout_marginLeft="30px"
+                        android:layout_marginTop="10px" android:layout_marginRight="10px"
+                        android:layout_marginBottom="10px" android:background="@drawable/rectgraywhite"
+                        android:gravity="center_vertical|left" android:textColor="@color/gray" android:textSize="35px"
+                        android:singleLine="true" android:ellipsize="end" android:paddingLeft="10px"
+                        android:paddingRight="10px"/>
+            </RelativeLayout>
+            <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="1px" android:layout_below="@+id/relativeLayout2"
+                    android:layout_alignParentLeft="true" android:id="@+id/relativeLayout3"
+                    android:background="@color/graylight">
+            </RelativeLayout>
+            <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="100px" android:layout_below="@+id/relativeLayout3"
+                    android:layout_alignParentLeft="true" android:id="@+id/relativeLayout4">
+                <TextView
+                        android:layout_width="200px"
+                        android:layout_height="fill_parent"
+                        android:text="@string/yuliudianhua"
+                        android:id="@+id/lblPhoneTitle" android:layout_centerVertical="true"
+                        android:layout_alignParentLeft="true" android:gravity="center_vertical|right"
+                        android:textColor="@color/gray" android:textSize="35px" android:layout_marginLeft="30px"/>
+                <EditText
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:id="@+id/txtPhone" android:layout_alignParentBottom="true"
+                        android:layout_toRightOf="@+id/lblPhoneTitle" android:layout_marginLeft="30px"
+                        android:layout_marginTop="10px" android:layout_marginRight="10px"
+                        android:layout_marginBottom="10px" android:background="@drawable/rectgraywhite"
+                        android:gravity="center_vertical|left" android:textColor="@color/gray" android:textSize="35px"
+                        android:singleLine="true" android:ellipsize="end" android:inputType="phone"
+                        android:paddingRight="10px" android:paddingLeft="10px"/>
+            </RelativeLayout>
+            <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="1px" android:layout_below="@+id/relativeLayout4"
+                    android:layout_alignParentLeft="true" android:id="@+id/relativeLayout5"
+                    android:background="@color/graylight">
+            </RelativeLayout>
+            <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="100px" android:layout_below="@+id/relativeLayout5"
+                    android:layout_alignParentLeft="true" android:id="@+id/relativeLayout6">
+                <TextView
+                        android:layout_width="200px"
+                        android:layout_height="fill_parent"
+                        android:text="@string/shenfenzhenghaoma"
+                        android:id="@+id/lblIDCardTitle" android:layout_centerVertical="true"
+                        android:layout_alignParentLeft="true" android:gravity="center_vertical|right"
+                        android:textColor="@color/gray" android:textSize="35px" android:layout_marginLeft="30px"/>
+                <EditText
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:id="@+id/txtIDCard" android:layout_alignParentBottom="true"
+                        android:layout_toRightOf="@+id/lblIDCardTitle" android:layout_marginLeft="30px"
+                        android:layout_marginTop="10px" android:layout_marginRight="10px"
+                        android:layout_marginBottom="10px" android:background="@drawable/rectgraywhite"
+                        android:gravity="center_vertical|left" android:textColor="@color/gray" android:textSize="35px"
+                        android:singleLine="true" android:ellipsize="end"
+                        android:paddingLeft="10px" android:paddingRight="10px"/>
+            </RelativeLayout>
+            <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="1px" android:layout_below="@+id/relativeLayout6"
+                    android:layout_alignParentLeft="true" android:id="@+id/relativeLayout7"
+                    android:background="@color/graylight">
+            </RelativeLayout>
+            <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="100px" android:layout_below="@+id/relativeLayout7"
+                    android:layout_alignParentLeft="true" android:id="@+id/relativeLayout8">
+                <TextView
+                        android:layout_width="200px"
+                        android:layout_height="fill_parent"
+                        android:text="@string/yuliudizhi"
+                        android:id="@+id/lblAddressTitle" android:layout_centerVertical="true"
+                        android:layout_alignParentLeft="true" android:gravity="center_vertical|right"
+                        android:textColor="@color/gray" android:textSize="35px" android:layout_marginLeft="30px"/>
+                <EditText
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:id="@+id/txtAddress" android:layout_alignParentBottom="true"
+                        android:layout_toRightOf="@+id/lblAddressTitle" android:layout_marginLeft="30px"
+                        android:layout_marginTop="10px" android:layout_marginRight="10px"
+                        android:layout_marginBottom="10px" android:background="@drawable/rectgraywhite"
+                        android:gravity="center_vertical|left" android:textColor="@color/gray" android:textSize="35px"
+                        android:singleLine="true" android:ellipsize="end"
+                        android:paddingRight="10px" android:paddingLeft="10px"/>
+            </RelativeLayout>
+            <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="1px" android:layout_below="@+id/relativeLayout8"
+                    android:layout_alignParentLeft="true" android:background="@color/graylight"
+                    android:id="@+id/relativeLayout9">
+            </RelativeLayout>
+            <TextView
+                    android:layout_width="400px"
+                    android:layout_height="60px"
+                    android:text="@string/qingshuruliuyanxinxi"
+                    android:id="@+id/lblContentTitle" android:layout_below="@+id/relativeLayout9"
+                    android:layout_alignParentLeft="true" android:layout_marginLeft="30px"
+                    android:layout_marginTop="20px" android:gravity="center_vertical|left"
+                    android:textColor="@color/gray" android:textSize="35px"/>
+            <EditText
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:inputType="textMultiLine"
+                    android:ems="10"
+                    android:id="@+id/txtContent" android:layout_below="@+id/lblContentTitle"
+                    android:layout_alignLeft="@+id/lblContentTitle" android:layout_marginTop="20px"
+                    android:layout_marginRight="20px" android:layout_marginBottom="20px" android:gravity="left|top"
+                    android:textColor="@color/gray" android:textSize="35px"
+                    android:background="@drawable/rectgraywhite" android:padding="10px"/>
+        </RelativeLayout>
+        <Button
+                android:layout_width="500px"
+                android:layout_height="100px"
+                android:text="@string/xiayibu"
+                android:id="@+id/btnNext" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true"
+                android:layout_marginBottom="80px" android:background="@drawable/roundblueblue"
+                android:textColor="@color/white" android:textSize="35px"/>
+    </RelativeLayout>
+</RelativeLayout>
+

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="D:\Chinese\2014\16_DingShengHui\Result\WebService" deleteExistingFiles="True" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="WebService" publishMethod="FileSystem" replaceMatchingFiles="False" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
+    <file relUrl="bin/DSHWebService.pdb" publishTime="11/30/2014 22:18:39" />
+    <file relUrl="JSON/Newtonsoft.Json.dll" publishTime="10/02/2014 22:34:12" />
+    <file relUrl="Web.config" publishTime="11/30/2014 22:19:06" />
+    <file relUrl="Service.svc" publishTime="10/16/2014 23:27:02" />
+    <file relUrl="bin/Newtonsoft.Json.dll" publishTime="10/02/2014 22:34:12" />
+    <file relUrl="ConnStrings.config" publishTime="11/13/2014 09:42:47" />
+    <file relUrl="bin/DSHWebService.dll" publishTime="11/30/2014 22:18:40" />
+  </publishProfile>
+</publishData>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent" android:id="@+id/parent_layout" android:background="@color/grayrare">
+
+    <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="100px" android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true" android:background="@color/bluelight"
+            android:id="@+id/relativeLayout">
+        <ImageView
+                android:layout_width="50px"
+                android:layout_height="80px"
+                android:id="@+id/imgBack" android:layout_centerVertical="true" android:layout_alignParentLeft="true"
+                android:layout_marginLeft="30px" android:scaleType="fitCenter" android:src="@drawable/leftarrowicon"/>
+        <TextView
+                android:layout_width="300px"
+                android:layout_height="fill_parent"
+                android:id="@+id/lblTitle" android:layout_centerVertical="true" android:layout_centerHorizontal="true"
+                android:gravity="center" android:textColor="@color/white" android:textSize="50px"
+                android:text="@string/sousuo"/>
+        <ImageView
+                android:layout_width="65px"
+                android:layout_height="69px"
+                android:id="@+id/imgUserInfo" android:layout_centerVertical="true"
+                android:layout_alignParentRight="true" android:layout_marginRight="20px" android:scaleType="fitCenter"
+                android:src="@drawable/usericon"/>
+    </RelativeLayout>
+    <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="180px" android:layout_below="@+id/relativeLayout"
+            android:background="@color/grayrare" android:id="@+id/rlMenu">
+        <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="120px"
+                android:layout_alignParentLeft="true" android:layout_marginLeft="30px" android:layout_marginRight="30px"
+                android:id="@+id/rlGallery" android:layout_centerVertical="true"
+                android:background="@drawable/roundgraywhite">
+            <ImageView
+                    android:layout_width="60px"
+                    android:layout_height="60px"
+                    android:id="@+id/imgSearch" android:layout_centerVertical="true"
+                    android:src="@drawable/searchsmallicon" android:scaleType="fitCenter"
+                    android:layout_marginRight="20px" android:layout_alignParentRight="true"/>
+            <TextView
+                    android:layout_width="45px"
+                    android:layout_height="45px"
+                    android:text="X"
+                    android:id="@+id/lblDelete" android:layout_centerVertical="true"
+                    android:layout_marginRight="20px" android:gravity="center"
+                    android:textColor="@color/graylight" android:textSize="35px" android:visibility="invisible"
+                    android:layout_toLeftOf="@+id/imgSearch"/>
+            <EditText
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:id="@+id/txtSearch" android:layout_centerVertical="true"
+                    android:layout_marginLeft="30px"
+                    android:layout_toLeftOf="@+id/lblDelete" android:layout_marginRight="20px"
+                    android:background="@android:color/transparent" android:ellipsize="end" android:gravity="center_vertical|left"
+                    android:paddingLeft="10px" android:paddingRight="10px" android:textColor="@color/graylight"
+                    android:textSize="35px" android:singleLine="true"/>
+        </RelativeLayout>
+    </RelativeLayout>
+    <view android:layout_width="fill_parent"
+          android:layout_height="fill_parent"
+          class="com.damytech.utils.PullRefreshListView.PullToRefreshListView" android:id="@+id/listGoods"
+          android:layout_below="@+id/rlMenu" android:layout_centerHorizontal="true"
+          android:layout_marginRight="5px" android:layout_marginBottom="5px"
+          android:layout_marginLeft="5px"/>
+</RelativeLayout>
+

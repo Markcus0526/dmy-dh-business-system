@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/parent_layout"
+                android:background="@drawable/roundwhitewhite_frame" android:gravity="center">
+
+    <RelativeLayout
+            android:layout_width="500px"
+            android:layout_height="300px"
+            android:background="@drawable/roundwhitewhite_frame">
+        <TextView
+                android:layout_width="450px"
+                android:layout_height="80px"
+                android:text="@string/confirmdelete"
+                android:id="@+id/lblTitle"
+                android:textColor="@color/graydark" android:textSize="35px" android:layout_centerHorizontal="true"
+                android:layout_marginTop="50px" android:textStyle="bold" android:gravity="center"/>
+        <Button
+                android:layout_width="150px"
+                android:layout_height="60px"
+                android:text="@string/queren"
+                android:id="@+id/btnOk" android:layout_alignParentLeft="true"
+                android:layout_marginLeft="30px"
+                android:background="@drawable/roundblueblue" android:textColor="@color/white"
+                android:textSize="30px" android:layout_alignParentBottom="true" android:layout_marginBottom="45px"/>
+        <Button
+                android:layout_width="150px"
+                android:layout_height="60px"
+                android:text="@string/quxiao"
+                android:id="@+id/btnCancel" android:layout_alignTop="@+id/btnOk" android:layout_alignParentRight="true"
+                android:layout_marginRight="30px" android:textSize="30px" android:textColor="@color/white"
+                android:background="@drawable/roundblueblue"/>
+    </RelativeLayout>
+</RelativeLayout>

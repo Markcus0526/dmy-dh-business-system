@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent" android:id="@+id/parent_layout" android:background="@color/grayrare">
+
+    <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="100px" android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true" android:background="@color/bluelight"
+            android:id="@+id/relativeLayout">
+        <ImageView
+                android:layout_width="50px"
+                android:layout_height="80px"
+                android:id="@+id/imgBack" android:layout_centerVertical="true" android:layout_alignParentLeft="true"
+                android:layout_marginLeft="30px" android:scaleType="fitCenter" android:src="@drawable/leftarrowicon"/>
+        <TextView
+                android:layout_width="480px"
+                android:layout_height="fill_parent"
+                android:id="@+id/lblTitle" android:layout_centerVertical="true" android:layout_centerHorizontal="true"
+                android:gravity="center" android:textColor="@color/white" android:textSize="50px"
+                android:ellipsize="end" android:singleLine="true"/>
+    </RelativeLayout>
+    <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" android:layout_below="@+id/relativeLayout"
+            android:layout_alignParentLeft="true" android:background="@color/grayrare">
+        <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="900px" android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true" android:layout_marginLeft="30px" android:layout_marginTop="30px"
+                android:layout_marginRight="30px" android:background="@drawable/roundgraywhite">
+            <ScrollView
+                    android:layout_width="fill_parent"
+                    android:layout_height="750px"
+                    android:id="@+id/scrollView" android:layout_marginLeft="40px" android:layout_marginTop="40px"
+                    android:layout_marginRight="40px">
+                <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent">
+                    <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:id="@+id/lblContent" android:layout_alignParentTop="true"
+                            android:layout_centerHorizontal="true"
+                            android:gravity="left|top"
+                            android:textColor="@color/gray" android:textSize="35px"/>
+                </RelativeLayout>
+            </ScrollView>
+            <ImageView
+                    android:layout_width="48px"
+                    android:layout_height="48px"
+                    android:id="@+id/imgLicense" android:layout_marginBottom="23px" android:layout_marginLeft="40px"
+                    android:layout_alignParentBottom="true" android:scaleType="fitCenter"
+                    android:src="@drawable/unchecked"/>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/woyitongyitiaokuan"
+                    android:id="@+id/lblLicense" android:layout_alignTop="@+id/imgLicense"
+                    android:layout_toRightOf="@+id/imgLicense" android:layout_alignRight="@+id/scrollView"
+                    android:layout_alignBottom="@+id/imgLicense" android:layout_marginLeft="20px"
+                    android:gravity="center_vertical|left" android:textColor="@color/gray" android:textSize="35px"/>
+        </RelativeLayout>
+        <Button
+                android:layout_width="500px"
+                android:layout_height="100px"
+                android:text="@string/woyaobanka"
+                android:id="@+id/btnOk" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true"
+                android:layout_marginBottom="80px" android:background="@drawable/roundblueblue_disable"
+                android:textColor="@color/white" android:textSize="35px"/>
+    </RelativeLayout>
+</RelativeLayout>
+
