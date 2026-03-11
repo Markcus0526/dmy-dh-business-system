@@ -1,45 +1,197 @@
-**Edit a file, create a new file, and clone from Bitbucket in under 2 minutes**
+# 鼎圣汇 (Ding Sheng Hui / DSH) Business System
 
-When you're done, you can delete the content in this README and update the file with details for others getting started with your repository.
+A comprehensive cross-platform business management system providing mobile and web-based services for financial transactions, product management, and business operations.
 
-*We recommend that you open this README in another tab as you perform the tasks below. You can [watch our video](https://youtu.be/0ocf7u76WSo) for a full demo of all the steps in this tutorial. Open the video in a new tab to avoid leaving Bitbucket.*
+## Overview
 
----
+鼎圣汇 (Ding Sheng Hui) is a business system designed to facilitate financial services, product trading, and business management. The system consists of multiple components including mobile applications (Android & iOS), web services, and web-based management portals.
 
-## Edit a file
+## Project Structure
 
-You’ll start by editing this README file to learn how to edit a file in Bitbucket.
+```
+dmy-dh-business-system/
+├── Android/               # Android Mobile Application
+├── iOS/                   # iOS Mobile Application
+├── WebService/            # WCF Web Service (API Layer)
+├── WebSite/               # ASP.NET Web Applications
+│   ├── Backend/           # Admin/Management Portal
+│   └── Frontend/          # Customer-facing Portal
+├── Database/              # SQL Server Database Files
+│   └── Development/       # Design Documents & Prototypes
+└── README.md
+```
 
-1. Click **Source** on the left side.
-2. Click the README.md link from the list of files.
-3. Click the **Edit** button.
-4. Delete the following text: *Delete this line to make a change to the README from Bitbucket.*
-5. After making your change, click **Commit** and then **Commit** again in the dialog. The commit page will open and you’ll see the change you just made.
-6. Go back to the **Source** page.
+## Technology Stack
 
----
+### Mobile Applications
 
-## Create a file
+| Platform | Technology | Framework/Libraries |
+|----------|------------|---------------------|
+| Android  | Java       | AsyncHttpClient, Pull-to-Refresh, SmartImageView |
+| iOS      | Objective-C| AFNetworking, Storyboard-based UI |
 
-Next, you’ll add a new file to this repository.
+### Backend Services
 
-1. Click the **New file** button at the top of the **Source** page.
-2. Give the file a filename of **contributors.txt**.
-3. Enter your name in the empty file space.
-4. Click **Commit** and then **Commit** again in the dialog.
-5. Go back to the **Source** page.
+| Component | Technology | Framework |
+|-----------|------------|-----------|
+| Web Service | C# .NET | WCF (Windows Communication Foundation) |
+| Frontend Portal | ASP.NET MVC 3 | Razor View Engine |
+| Backend Portal | ASP.NET MVC 3 | Razor View Engine |
+| Database | SQL Server | LINQ to SQL |
 
-Before you move on, go ahead and explore the repository. You've already seen the **Source** page, but check out the **Commits**, **Branches**, and **Settings** pages.
+### Key Libraries
 
----
+- **JSON Processing:** Newtonsoft.Json
+- **HTTP Client:** AsyncHttpClient (Android), AFNetworking (iOS)
+- **UI Components:** Custom pull-to-refresh, wheel date/time pickers
 
-## Clone a repository
+## Features
 
-Use these steps to clone from SourceTree, our client for using the repository command-line free. Cloning allows you to work on your files locally. If you don't yet have SourceTree, [download and install first](https://www.sourcetreeapp.com/). If you prefer to clone from the command line, see [Clone a repository](https://confluence.atlassian.com/x/4whODQ).
+### Mobile Application Features
 
-1. You’ll see the clone button under the **Source** heading. Click that button.
-2. Now click **Check out in SourceTree**. You may need to create a SourceTree account or log in.
-3. When you see the **Clone New** dialog in SourceTree, update the destination path and name if you’d like to and then click **Clone**.
-4. Open the directory you just created to see your repository’s files.
+- **User Authentication**
+  - Login/Logout
+  - User Registration
+  - Password Reset (via SMS verification)
+  - Profile Management
 
-Now that you're more familiar with your Bitbucket repository, go ahead and add a new file locally. You can [push your change back to Bitbucket with SourceTree](https://confluence.atlassian.com/x/iqyBMg), or you can [add, commit,](https://confluence.atlassian.com/x/8QhODQ) and [push from the command line](https://confluence.atlassian.com/x/NQ0zDQ).
+- **Product Management**
+  - Product Catalog & Categories
+  - Product Search
+  - Product Details
+  - Recommended Products
+
+- **Order Management**
+  - Order Creation & Upload
+  - Order History
+  - Order Status Tracking
+  - Order Evaluation
+
+- **Financial Services**
+  - Business Money Application
+  - Payment Processing
+  - Transaction History
+
+- **Business Services**
+  - Service Application
+  - Service Upload
+  - Service Details
+
+- **Additional Features**
+  - Photo Selection/Capture
+  - Location Services (Baidu Maps)
+  - Credit Card/Bank Card Integration
+
+### Web Portal Features
+
+#### Frontend (Customer Portal)
+- User Account Management
+- Product Browsing
+- Financial Services
+- Order Management
+- Sales Tracking
+
+#### Backend (Admin Portal)
+- User Account Administration
+- Shop Management
+- Product Catalog Management
+- Card/Payment Management
+- Region Management
+- Device Management
+- Financial Transactions
+- Sales Analytics
+- Upload Management
+
+## API Endpoints (Web Service)
+
+The WCF Web Service provides the following key endpoints:
+
+### Authentication
+- `LoginUser` - User login with credentials and device info
+- `RegisterUser` - New user registration
+- `ReqVerifyKey` - Request SMS verification code
+- `ConfirmVerifyKey` - Verify SMS code
+- `ResetPassword` - Password reset functionality
+
+### User Management
+- `GetUserInfo` - Retrieve user profile
+- `UpdateUserInfo` - Update user information
+
+### Products
+- `GetRecommendGoodList` - Get featured/recommended products
+- `GetGoodKindList` - Get product categories
+- `GetGoodsList` - Get product list with pagination
+- `FindGoodsList` - Search products
+- `GetGoodDetailInfo` - Get product details
+
+### Services
+- `GetServiceList` - Get available services
+- `AddServiceItem` - Apply for a service
+
+### Orders
+- `GetMyOrderList` - Get user's order history
+- `GetGoodOrderInfo` - Get order details
+- `UploadOrderInfo` - Create/update order
+- `SetGoodEval` - Submit product evaluation
+
+### Financial
+- `AddBusinessMoney` - Apply for business financing
+
+## Database
+
+The system uses SQL Server with the following main tables:
+- `tbl_admin` - Administrators
+- `tbl_adminroles` - Admin roles/permissions
+- `tbl_shops` - Shop accounts
+- `tbl_users` - End users
+- Products, Orders, Services, and more...
+
+## Development Documentation
+
+Refer to the `Document/Development/` directory for:
+- Service Design Documentation
+- Database Design (Excel)
+- System Requirements Specification
+- UI/UX Prototypes
+
+## Project Configuration
+
+### Database Configuration
+- Database files: `Database/DSH.mdf` and `DSH_log.ldf`
+- Connection strings in respective project config files
+
+### Mobile App Configuration
+- Service endpoint URLs defined in app constants
+- Payment integration: UPPayPlugin (银联支付)
+
+## Building & Deployment
+
+### Prerequisites
+- Android Studio / Eclipse for Android
+- Xcode for iOS
+- Visual Studio 2010+ for .NET components
+- SQL Server 2008+
+
+### Database Setup
+1. Attach the SQL Server database files
+2. Update connection strings in configuration files
+
+### Web Service Setup
+1. Open solution in Visual Studio
+2. Configure web.config with database connection
+3. Deploy to IIS or run locally
+
+### Website Setup
+1. Open Backend/Frontend solutions
+2. Configure Web.config
+3. Deploy to IIS
+
+## License
+
+Copyright © 2014. All rights reserved.
+
+## Version
+
+- Project Version: 1.0
+- Last Updated: 2014
+
